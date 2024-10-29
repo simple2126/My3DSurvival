@@ -26,11 +26,6 @@ public class PlayerController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         Move();
