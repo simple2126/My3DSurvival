@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Shield
   m_EditorClassIdentifier: 
   displayName: "\uBC29\uD328"
-  description: "\uCCB4\uB825\uC774 20 \uC99D\uAC00\uD569\uB2C8\uB2E4."
+  description: "\uCCB4\uB825\uC774 \uC99D\uAC00\uD569\uB2C8\uB2E4."
   type: 0
   icon: {fileID: 21300000, guid: f3b1ba2747fcd9c4bb0da7c2af82b64b, type: 3}
   dropPrefab: {fileID: 746141843627403978, guid: c59e57829bea25d4ebd78b646333f26c, type: 3}
+  UpPercent: 0
+  UpValue: 20
   canStack: 0
   maxStackAmount: 0
   consumables:
