@@ -120,9 +120,9 @@ public class PlayerController : MonoBehaviour
         transform.eulerAngles += new Vector3(0, mouseLook.x * lookSensitivity, 0);
     }
 
-    public void OnInventory(InputAction.CallbackContext callbackContext)
+    public void OnInventory(InputAction.CallbackContext context)
     {
-        if (callbackContext.phase == InputActionPhase.Started)
+        if (context.phase == InputActionPhase.Started)
         {
             inventory?.Invoke();
             ToggleCursor();
@@ -131,6 +131,7 @@ public class PlayerController : MonoBehaviour
 
     void ToggleCursor()
     {
+        // none 0 locked 1
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;

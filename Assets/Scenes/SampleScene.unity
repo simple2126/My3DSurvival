@@ -215,7 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startValue: 100
   maxValue: 100
-  curValue: 100
+  curValue: 0
   passiveValue: 1
   imgBar: {fileID: 1058939114}
 --- !u!1001 &62931244
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   slots: []
   inventoryWindow: {fileID: 619795467}
   slotPanel: {fileID: 936265837}
-  dropPosition: {fileID: 313949590}
+  dropPosition: {fileID: 0}
   selectedItemName: {fileID: 1988982448}
   selectedItemDescription: {fileID: 1759374304}
   selectedStatName: {fileID: 2056634113}
@@ -1600,7 +1600,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 904993804}
-  - component: {fileID: 904993805}
+  - component: {fileID: 904993806}
   m_Layer: 5
   m_Name: Conditions
   m_TagString: Untagged
@@ -1628,7 +1628,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &904993805
+--- !u!114 &904993806
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1637,7 +1637,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 904993803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf420d097326b7b439005a72e460d1e7, type: 3}
+  m_Script: {fileID: 11500000, guid: c44c48289d164fc4a91fa9bcd7972a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 59627742}
@@ -2636,9 +2636,9 @@ GameObject:
   - component: {fileID: 1245318972}
   - component: {fileID: 1245318971}
   - component: {fileID: 1245318976}
-  - component: {fileID: 1245318977}
   - component: {fileID: 1245318978}
   - component: {fileID: 1245318979}
+  - component: {fileID: 1245318980}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2856,26 +2856,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: f541ef80-61a0-45ec-937b-f2e08d52af5d
+    m_ActionId: 30da580b-793c-4075-a7ca-d80b1f21eb6d
     m_ActionName: Player/Inventory[/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1245318977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245318970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e2c21c206c1924a91a0d4d4b4f86ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiCondition: {fileID: 0}
 --- !u!114 &1245318978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2909,6 +2896,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curEquip: {fileID: 0}
   equipParent: {fileID: 70250993}
+--- !u!114 &1245318980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245318970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faebf71d5a849c447b109520daebf34f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiCondition: {fileID: 0}
 --- !u!1001 &1304420080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3690,7 +3690,6 @@ GameObject:
   - component: {fileID: 1577929155}
   - component: {fileID: 1577929157}
   - component: {fileID: 1577929156}
-  - component: {fileID: 1577929158}
   m_Layer: 5
   m_Name: InfoBG
   m_TagString: Untagged
@@ -3763,30 +3762,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577929154}
   m_CullTransparentMesh: 1
---- !u!114 &1577929158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577929154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5472a6566098424aad4b682c6db1e5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slots: []
-  inventoryWindow: {fileID: 619795467}
-  slotPanel: {fileID: 936265837}
-  dropPosition: {fileID: 0}
-  selectedItemName: {fileID: 0}
-  selectedItemDescription: {fileID: 0}
-  selectedStatName: {fileID: 0}
-  selectedStatValue: {fileID: 0}
-  useButton: {fileID: 0}
-  equipButton: {fileID: 0}
-  unEquipButton: {fileID: 0}
-  dropButton: {fileID: 0}
 --- !u!1 &1680967242
 GameObject:
   m_ObjectHideFlags: 0

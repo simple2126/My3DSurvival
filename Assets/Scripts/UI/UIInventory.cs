@@ -48,7 +48,6 @@ public class UIInventory : MonoBehaviour
 
         ClearSelectedItemWindow();
     }
-
     private void ClearSelectedItemWindow()
     {
         selectedItemName.text = string.Empty;
@@ -188,23 +187,20 @@ public class UIInventory : MonoBehaviour
     {
         if (selectedItem.type == ItemType.Consumable)
         {
-            float durationTime;
-            float upPercent;
-            float upValue;
             for (int i = 0; i < selectedItem.consumables.Length; i++)
             {
-                durationTime = selectedItem.consumables[i].durationTime;
-                upPercent = selectedItem.consumables[i].upPercent;
+                float time = selectedItem.consumables[i].durationTime;
+                float percent = selectedItem.consumables[i].upPercent;
                 switch (selectedItem.consumables[i].type)
                 {
                     case ConsumableType.SpeedBoost:
-                        controller.SpeedBoost(durationTime, upPercent);
+                        controller.SpeedBoost(time, percent);
                         break;
                     case ConsumableType.DoubleJump:
-                        controller.DoubleJump(durationTime);
+                        controller.DoubleJump(time);
                         break;
                     case ConsumableType.Invincibility:
-                        controller.Invincibility(durationTime);
+                        controller.Invincibility(time);
                         break;
                 }
             }
