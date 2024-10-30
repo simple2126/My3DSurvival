@@ -16,7 +16,8 @@ public enum ConsumableType
 public enum EquipableType
 {
     SpeedBoost,
-    JumpBoost
+    JumpBoost,
+    UpHealth
 }
 
 public class Item
@@ -32,6 +33,7 @@ public class ItemDataConsumable : Item
     public ConsumableType type;
 }
 
+[System.Serializable]
 public class ItemDataEquipable : Item
 {
     public EquipableType type;
@@ -46,17 +48,15 @@ public class ItemData : ScriptableObject
     public ItemType type;
     public Sprite icon;
     public GameObject dropPrefab;
-    public float UpPercent;
-    public float UpValue;
 
     [Header("Stacking")]
     public bool canStack;
     public int maxStackAmount;
 
     [Header("Consumable")]
-    public ItemDataConsumable[] consumables;
+    public ItemDataConsumable consumables;
 
     [Header("Equip")]
-    public GameObject equipPrefab;
     public ItemDataEquipable equipable;
+    public GameObject equipPrefab;
 }

@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayerMask;
     private bool isDoubleJump;
     private int jumpCount;
-    private bool isInvincibility;
+    public bool isInvincibility;
 
     [Header("Look")]
     public Transform cameraContainer;
@@ -27,13 +26,17 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool canLook = true;
-
     public Action inventory;
     private Coroutine coroutine;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
+    }
+
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void FixedUpdate()
@@ -65,7 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if(context.phase == InputActionPhase.Started)
         {
-            if(!IsGround() && isDoubleJump && jumpCount < 2)
+            if(isDoubleJump && jumpCount < 2)
             {
                 rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 jumpCount++;
@@ -153,6 +156,7 @@ public class PlayerController : MonoBehaviour
     public void DoubleJump(float durationTime)
     {
         isDoubleJump = true;
+        jumpCount = 2;
         StartCoroutine(DoubleJumpCoroutine(durationTime));
     }
 

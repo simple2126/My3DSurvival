@@ -8,6 +8,7 @@ public class PlayerCondition : MonoBehaviour
 
     void Update()
     {
+        if (CharacterManager.Instance.Player.controller.isInvincibility) return;
         health.Substract(health.passiveValue * Time.deltaTime);
         if(health.curValue == 0f)
         {

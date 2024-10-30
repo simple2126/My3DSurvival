@@ -170,11 +170,13 @@ public class UIInventory : MonoBehaviour
         selectedStatName.text = string.Empty;
         selectedStatValue.text = string.Empty;
 
-        for (int i = 0; i < selectedItem.consumables.Length; i++)
+        float percent = selectedItem.consumables.upPercent;
+        float value = selectedItem.consumables.upValue;
+        if (percent > 0f || value > 0f)
         {
-            selectedStatName.text += selectedItem.consumables[i].type.ToString() + "\n";
-            selectedStatValue.text += selectedItem.consumables[i].upPercent.ToString() + "%\n";
-            selectedStatValue.text += selectedItem.consumables[i].upValue.ToString() + "\n";
+            selectedStatName.text = selectedItem.consumables.type.ToString() + "\n";
+            if (percent > 0f) selectedStatValue.text = selectedItem.consumables.upPercent.ToString() + "%\n";
+            if (value > 0f) selectedStatValue.text = selectedItem.consumables.upValue.ToString() + "\n";
         }
 
         useButton.SetActive(selectedItem.type == ItemType.Consumable);
@@ -187,22 +189,19 @@ public class UIInventory : MonoBehaviour
     {
         if (selectedItem.type == ItemType.Consumable)
         {
-            for (int i = 0; i < selectedItem.consumables.Length; i++)
+            float time = selectedItem.consumables.durationTime;
+            float percent = selectedItem.consumables.upPercent;
+            switch (selectedItem.consumables.type)
             {
-                float time = selectedItem.consumables[i].durationTime;
-                float percent = selectedItem.consumables[i].upPercent;
-                switch (selectedItem.consumables[i].type)
-                {
-                    case ConsumableType.SpeedBoost:
-                        controller.SpeedBoost(time, percent);
-                        break;
-                    case ConsumableType.DoubleJump:
-                        controller.DoubleJump(time);
-                        break;
-                    case ConsumableType.Invincibility:
-                        controller.Invincibility(time);
-                        break;
-                }
+                case ConsumableType.SpeedBoost:
+                    controller.SpeedBoost(time, percent);
+                    break;
+                case ConsumableType.DoubleJump:
+                    controller.DoubleJump(time);
+                    break;
+                case ConsumableType.Invincibility:
+                    controller.Invincibility(time);
+                    break;
             }
             RemoveSelectedItem();
         }

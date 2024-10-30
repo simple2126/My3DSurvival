@@ -17,11 +17,16 @@ MonoBehaviour:
   type: 0
   icon: {fileID: 21300000, guid: 0e972098e4bebd645aadbfe1c90ea971, type: 3}
   dropPrefab: {fileID: 1757433334416895389, guid: f951814d547f65c49996d84197b69b62, type: 3}
-  UpPercent: 10
-  UpValue: 0
   canStack: 0
   maxStackAmount: 0
   consumables:
-    type: 0
     durationTime: 0
+    upPercent: 0
+    upValue: 0
+    type: 0
+  equipable:
+    durationTime: 0
+    upPercent: 10
+    upValue: 0
+    type: 0
   equipPrefab: {fileID: 2601385858743271049, guid: 47a8b37c8420c7742ba53105931ee475, type: 3}
